@@ -1,0 +1,309 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins&display=swap');
+
+
+html{
+    overflow: hidden;
+}
+body{
+    background: #051e33;
+    overflow: none;
+    font-family: 'Poppins', sans-serif;
+
+}
+
+/* .swiper-wrapper{
+    perspective: 150vh;
+} */
+
+.swiper {
+    position: absolute;
+    top:0vh ;
+    left: 50%;
+    transform: translate(-50%);
+    width: 100vw;
+    height: 100vh;
+    text-align: center;
+    overflow: hidden;
+
+
+}
+
+.swiper-slide{
+    background: none !important;
+    /* display: flex; */
+    transition: .5s linear;
+    transform-style: preserve-3d;
+    transition: all 1.0s ease-in-out;
+    border-radius: 2vh;
+    perspective: 150vh;
+}
+/* #slideNumber1{
+    perspective: 150vh;
+}
+#slideNumber2{
+    perspective: 150vh;
+}
+#slideNumber3{
+    perspective: 150vh;
+}
+#slideNumber4{
+    perspective: 150vh;
+}
+#slideNumber5{
+    perspective: 150vh;
+} */
+
+
+
+/* Brilliant INvestigating Mr Majumder, youve found the hidden class in swiper js, that was causing al the problem, how reduce its size with the actual card size*/
+.swiper-slide-shadow{
+ opacity: 0 !important;
+    /* top: 15% !important;
+    left: 15% !important;
+    width: 70% !important;
+    height: 70% !important;
+    border-radius: 2vh !important; */
+
+}
+
+/* THE CARD HOLDS THE FRONT AND BACK FACES */
+.theCard{
+    position: relative;
+    top: 0%;
+    left: 0%;
+    width: 100%;
+    height: 100%;
+    border-radius: 3vh;
+    transform-style: preserve-3d;
+    transition: all 1.0s ease-in-out;
+
+}
+
+
+.rotateCard{
+    transform: rotateY(180deg) scale(1.0);
+}
+
+
+
+/* THE FRONT FACE OF THE CARD, WHICH SHOWS BY DEFAULT */
+.frontSide{
+    position: absolute;
+    top: 15%;
+    left: 15%;
+    width: 70%;
+    height: 70%;
+    border-radius: 3vh;
+    -webkit-backface-visibility: hidden;
+    backface-visibility: hidden;
+    overflow: hidden;
+    background: linear-gradient(0deg, rgba(3, 26, 47, 0.37), rgba(3, 26, 47, 0.37)), linear-gradient(223.26deg, #0B3350 -3.66%, #23647C -3.62%, #23647C -1.27%, #0B3350 -1.14%, #0B3350 10.02%, #23647C 10.28%, #23647C 11.58%, #0B3350 11.64%, #0B3350 13.23%, #23647C 13.29%, #23647C 85.03%, #0B3350 85.11%, #0B3350 87.93%, #23647C 87.94%, #23647C 89.07%, #0B3350 89.11%, #0B3350 111.94%, #23647C 112.12%, #23647C 119.88%, #0B3350 120.15%);
+    /* filter: drop-shadow(0 0 3vh #0b3350); */
+    filter: drop-shadow(0 0 0.5vh #6cf7fc2d);
+    /* -webkit-backdrop-filter: blur(10px);
+    backdrop-filter: blur(10px); */
+
+    color: rgb(255, 255, 255);
+
+
+    /* background: linear-gradient(0.12turn,#ffee02, rgb(255, 174, 43)); */
+    /* background: linear-gradient(0.12turn,#e66465, #9198e5); */
+
+    /* background: #ffee02; */
+    /* border:0.3vh solid rgba(0, 0, 0, 0.068) ; */
+
+    /* color: rgb(104, 104, 104); */
+}
+#bar1{
+    position: absolute;
+    left: 0;
+    top: 22%;
+    width: 55%;
+    height: 2%;
+    background: linear-gradient(to right, #dffeff5b,#dffeff0c);
+    border-radius: 0 1vh 1vh 0;
+}
+#bar2{
+    position: absolute;
+    left: 0;
+    top: 22%;
+    width: 55%;
+    height: 2%;
+    background: linear-gradient(to right, #dffeff5b,#dffeff0c);
+    border-radius: 0 1vh 1vh 0;
+}
+#bar3{
+    position: absolute;
+    left: 0;
+    top: 22%;
+    width: 55%;
+    height: 2%;
+    background: linear-gradient(to right, #dffeff5b,#dffeff0c);
+    border-radius: 0 1vh 1vh 0;
+}
+#bar4{
+    position: absolute;
+    left: 0;
+    top: 22%;
+    width: 55%;
+    height: 2%;
+    background: linear-gradient(to right, #dffeff5b,#dffeff0c);
+    border-radius: 0 1vh 1vh 0;
+}
+#bar5{
+    position: absolute;
+    left: 0;
+    top: 22%;
+    width: 55%;
+    height: 2%;
+    background: linear-gradient(to right, #dffeff5b,#dffeff0c);
+    border-radius: 0 1vh 1vh 0;
+}
+
+
+/* THE BACK FACE OF THE CARD, WHICH SHOWS ON MOUSEOVER */
+.backSide{
+    position: absolute;
+    top: 15%;
+    left: 15%;
+    width: 70%;
+    height: 70%;
+    border-radius: 3vh;
+    -webkit-backface-visibility: hidden;
+    backface-visibility: hidden;
+    overflow: hidden;
+    background: #dffeff;
+    /* background: linear-gradient(0.12turn,#ff1288, #2a12ff); */
+    /* border:0.5vh solid rgb(255, 255, 255) ; */
+    filter: drop-shadow(0 0 3vh #00575a91);
+
+    color: #0b3350;
+    text-align: center;
+    transform: rotateY(180deg);
+}
+/*This block (starts here) is merely styling for the flip card, and is NOT an essential part of the flip code */
+.frontSide h1{
+    margin: 0;
+
+    padding: 3vh;
+    padding-bottom: 1.5vh; 
+    font-weight: 5000;
+    font-size: 7vh;
+    text-align: center;
+    /* background-color: #f5f5f5; */
+    color: rgb(255, 255, 255);
+}
+
+.backSide h1{
+    margin-top: 2.5vh;
+    font-weight: bold;
+    font-size: 4vh;
+    text-align: center;
+}
+  
+.backSide p{
+    padding: 5vh;
+    padding-top: 0vh;
+    font-weight: normal;
+    font-size: 2vh;
+    text-align: justify;
+    color: #0b3350b0;
+
+}
+  .frontSide p{
+    padding: 5vh;
+    padding-top: 2vh;
+    font-weight: normal;
+    /* font-size: 2.5vh; */
+    font-size: clamp(22px, 3vh,30px);
+
+    text-align: justify;
+    
+  }
+  /*This block (ends here) is merely styling for the flip card, and is NOT an essential part of the flip code */
+
+#q1pic{
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+    width: clamp(50px, 90% ,  650px);
+    bottom: 0%;
+}
+
+
+
+
+.slideContents{
+    position: absolute;
+    top:0;
+    left: 10;
+    width: 80%;
+    height: 100%;
+}
+
+:root{
+    --swiper-theme-color: #fbffd500;
+}
+
+/* button{
+    padding: 10px;
+    background: #ffcebb;
+    border: none;
+    outline: none;
+    border-radius: 4px;
+    color: rgb(88, 88, 88);
+    cursor: pointer;
+    font-family: 'Poppins', sans-serif;
+}
+
+button:hover{
+    background: #ece6ff;
+} */
+
+
+@media only screen and (max-aspect-ratio:1/1 ) { 
+    /* Phone mode */
+
+    /* .swiper {
+        width: 80vh;   
+    } */
+
+    /* perfect in pixel 5 - a small phone */
+    .frontSide h1{ 
+        margin: 0;
+        padding: 3vw;
+        padding-bottom: 1.5vw; 
+        font-weight: 5000;
+        font-size: 7vw;
+    }
+    .frontSide p{
+        position: absolute;
+        top: 25%;
+        left: 0;
+        width: 85%;
+        height: 75%;
+        padding: 5vw;
+        padding-top: 1vw;
+        font-weight: normal;
+        font-size: 3vw;
+        text-align: justify;
+        
+      }
+      .backSide h1{
+        margin-top: 2.5vw;
+        font-weight: bold;
+        font-size: 4vw;
+        text-align: center;
+    }
+      
+    .backSide p{
+        padding: 5vw;
+        padding-top: 0vw;
+        font-weight: normal;
+        font-size: 2.3vw;
+        text-align: justify;
+        color: #0b3350b0;
+    
+    }
+
+}
