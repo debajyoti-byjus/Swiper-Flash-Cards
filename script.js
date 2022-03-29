@@ -40,97 +40,93 @@ const swiper = new Swiper('.swiper', {
 // }
 // TEST SuccessFull. click works
 
-document.getElementById("card1").onclick = function(){
-  if(this.classList.contains("rotateCard")){
-      this.classList.remove("rotateCard");
-      // flipState[currentQues]=-1;
+document.getElementById("card1").onclick = function () {
+  if (this.classList.contains("rotateCard")) {
+    this.classList.remove("rotateCard");
+    // flipState[currentQues]=-1;
   }
-  else{
-      this.classList.add("rotateCard");
-      // flipState[currentQues]=1; //means card was reverted once
+  else {
+    this.classList.add("rotateCard");
+    // flipState[currentQues]=1; //means card was reverted once
   }
-  
+
 }
 
-document.getElementById("card2").onclick = function(){
-  if(this.classList.contains("rotateCard")){
-      this.classList.remove("rotateCard");
-      // flipState[currentQues]=-1;
+document.getElementById("card2").onclick = function () {
+  if (this.classList.contains("rotateCard")) {
+    this.classList.remove("rotateCard");
+    // flipState[currentQues]=-1;
   }
-  else{
-      this.classList.add("rotateCard");
-      // flipState[currentQues]=1; //means card was reverted once
+  else {
+    this.classList.add("rotateCard");
+    // flipState[currentQues]=1; //means card was reverted once
   }
-  
+
 }
-document.getElementById("card3").onclick = function(){
-  if(this.classList.contains("rotateCard")){
-      this.classList.remove("rotateCard");
-      // flipState[currentQues]=-1;
+document.getElementById("card3").onclick = function () {
+  if (this.classList.contains("rotateCard")) {
+    this.classList.remove("rotateCard");
+    // flipState[currentQues]=-1;
   }
-  else{
-      this.classList.add("rotateCard");
-      // flipState[currentQues]=1; //means card was reverted once
+  else {
+    this.classList.add("rotateCard");
+    // flipState[currentQues]=1; //means card was reverted once
   }
-  
+
 }
-document.getElementById("card4").onclick = function(){
-  if(this.classList.contains("rotateCard")){
-      this.classList.remove("rotateCard");
-      // flipState[currentQues]=-1;
+document.getElementById("card4").onclick = function () {
+  if (this.classList.contains("rotateCard")) {
+    this.classList.remove("rotateCard");
+    // flipState[currentQues]=-1;
   }
-  else{
-      this.classList.add("rotateCard");
-      // flipState[currentQues]=1; //means card was reverted once
+  else {
+    this.classList.add("rotateCard");
+    // flipState[currentQues]=1; //means card was reverted once
   }
-  
+
 }
-document.getElementById("card5").onclick = function(){
-  if(this.classList.contains("rotateCard")){
-      this.classList.remove("rotateCard");
-      // flipState[currentQues]=-1;
+document.getElementById("card5").onclick = function () {
+  if (this.classList.contains("rotateCard")) {
+    this.classList.remove("rotateCard");
+    // flipState[currentQues]=-1;
   }
-  else{
-      this.classList.add("rotateCard");
-      // flipState[currentQues]=1; //means card was reverted once
+  else {
+    this.classList.add("rotateCard");
+    // flipState[currentQues]=1; //means card was reverted once
   }
-  
+
 }
+//window resizing resizes the image too
+function picsizecalculator() {
+  var w = document.getElementById('card1').offsetWidth;
+  var h = document.getElementById('card1').offsetHeight;
+  //set width for the image 1
+  let aspectRatioP1 = 418 / 357;
+  if ((0.75 * w / aspectRatioP1) > 0.5 * h) { // 75% of width 
+    let picwidth = 0.5 * h * aspectRatioP1;
+    document.getElementById("q1pic").style.width = picwidth + "px";
+    document.getElementById("q1pic").style.height = 0.5 * h + "px";
+    console.log("Case 1", w, h);
+  }
+  else { //calculate height from 75% width.
+    document.getElementById("q1pic").style.width = 0.75 * w + "px";
+    document.getElementById("q1pic").style.height = 0.75 * w / aspectRatioP1 + "px";
+    console.log("Case 2", w, h);
+  }
 
-
-
-
-
-//  function fitText(outputSelector){
-//     // max font size in pixels
-//     const maxFontSize = 50;
-//     // get the DOM output element by its selector
-//     let outputDiv = document.getElementById(outputSelector);
-//     // get element's width
-//     let width = outputDiv.clientWidth;
-//     // get content's width
-//     let contentWidth = outputDiv.scrollWidth;
-//     // get fontSize
-//     let fontSize = parseInt(window.getComputedStyle(outputDiv, null).getPropertyValue('font-size'),10);
-//     // if content's width is bigger then elements width - overflow
-//     if (contentWidth > width){
-//         fontSize = Math.ceil(fontSize * width/contentWidth,10);
-//         fontSize =  fontSize > maxFontSize  ? fontSize = maxFontSize  : fontSize - 1;
-//         outputDiv.style.fontSize = fontSize+'px';   
-//     }else{
-//         // content is smaller then width... let's resize in 1 px until it fits 
-//         while (contentWidth === width && fontSize < maxFontSize){
-//             fontSize = Math.ceil(fontSize) + 1;
-//             fontSize = fontSize > maxFontSize  ? fontSize = maxFontSize  : fontSize;
-//             outputDiv.style.fontSize = fontSize+'px';   
-//             // update widths
-//             width = outputDiv.clientWidth;
-//             contentWidth = outputDiv.scrollWidth;
-//             if (contentWidth > width){
-//                 outputDiv.style.fontSize = fontSize-1+'px'; 
-//             }
-//         }
-//     }
-// }
-
-// https://github.com/ricardobrg/fitText/
+  //set width for the image 2
+  let aspectRatioP2 = 526 / 297;
+  if ((0.60 * w / aspectRatioP2) > 0.5 * h) { // 60% of width 
+    let picwidth = 0.5 * h * aspectRatioP2;
+    document.getElementById("q2pic").style.width = picwidth + "px";
+    document.getElementById("q2pic").style.height = 0.5 * h + "px";
+    console.log("Case 1", w, h);
+  }
+  else { //calculate height from 60% width.
+    document.getElementById("q2pic").style.width = 0.60 * w + "px";
+    document.getElementById("q2pic").style.height = 0.60 * w / aspectRatioP2 + "px";
+    console.log("Case 2", w, h);
+  }
+}
+window.onload = picsizecalculator;
+window.onresize = picsizecalculator;
