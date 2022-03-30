@@ -127,6 +127,48 @@ function picsizecalculator() {
     document.getElementById("q2pic").style.height = 0.60 * w / aspectRatioP2 + "px";
     console.log("Case 2", w, h);
   }
+
+  //set width for the image 3
+  let aspectRatioP3 = 536 / 289;
+  if ((0.60 * w / aspectRatioP3) > 0.5 * h) { // 60% of width 
+    let picwidth = 0.5 * h * aspectRatioP3;
+    document.getElementById("q3pic").style.width = picwidth + "px";
+    document.getElementById("q3pic").style.height = 0.5 * h + "px";
+    console.log("Case 1", w, h);
+  }
+  else { //calculate height from 60% width.
+    document.getElementById("q3pic").style.width = 0.60 * w + "px";
+    document.getElementById("q3pic").style.height = 0.60 * w / aspectRatioP3 + "px";
+    console.log("Case 2", w, h);
+  }
+
+  //set width for the image 4
+  let aspectRatioP4 = 523 / 288;
+  if ((0.60 * w / aspectRatioP4) > 0.5 * h) { // 60% of width 
+    let picwidth = 0.5 * h * aspectRatioP4;
+    document.getElementById("q4pic").style.width = picwidth + "px";
+    document.getElementById("q4pic").style.height = 0.5 * h + "px";
+    console.log("Case 1", w, h);
+  }
+  else { //calculate height from 60% width.
+    document.getElementById("q4pic").style.width = 0.60 * w + "px";
+    document.getElementById("q4pic").style.height = 0.60 * w / aspectRatioP4 + "px";
+    console.log("Case 2", w, h);
+  }
+
+  //set width for the image 4
+  let aspectRatioP5 = 714 / 492;
+  if ((0.60 * w / aspectRatioP5) > 0.5 * h) { // 60% of width 
+    let picwidth = 0.5 * h * aspectRatioP5;
+    document.getElementById("q5pic").style.width = picwidth + "px";
+    document.getElementById("q5pic").style.height = 0.5 * h + "px";
+    console.log("Case 1", w, h);
+  }
+  else { //calculate height from 60% width.
+    document.getElementById("q5pic").style.width = 0.60 * w + "px";
+    document.getElementById("q5pic").style.height = 0.60 * w / aspectRatioP5 + "px";
+    console.log("Case 2", w, h);
+  }
 }
 window.onload = picsizecalculator;
 window.onresize = picsizecalculator;
